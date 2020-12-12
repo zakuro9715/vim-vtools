@@ -8,5 +8,5 @@ endfunction
 
 augroup vtools_install
   au!
-  autocmd FileType v call s:install()
+  autocmd FileType vlang call s:install()
 augroup END
