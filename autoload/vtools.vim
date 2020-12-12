@@ -19,6 +19,9 @@ function! vtools#run() abort
   execute '!v run %'
 endfunction
 
+function! vtools#vet() abort
+  execute '!v vet %'
+endfunction
 
 function! s:write_to_tmp_v(original)
   let l:timestamp = localtime()
