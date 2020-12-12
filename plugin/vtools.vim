@@ -3,7 +3,7 @@ function! s:install()
     au! * <buffer>
     autocmd BufWritePre <buffer> call vtools#write_pre()
   augroup END
-  command! -buffer -bang -nargs=0 Fmt call vtools#fmt()
+  command! -buffer -bang -nargs=0 VFmt call vtools#fmt()
 endfunction
 
 augroup vtools_install

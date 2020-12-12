@@ -30,7 +30,7 @@ Plug 'zakuro9715/vim-vtools'
 
 ## Commands
 
-- Fmt: v fmt
+- VFmt: v fmt
 
 ## Configuration
 
