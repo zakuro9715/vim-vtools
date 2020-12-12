@@ -34,7 +34,7 @@ Plug 'zakuro9715/vim-vtools'
 
 ## Configuration
 
-```
+```viml
 " enable auto format when write. (defaut)
 let g:vfmt = 1
 " disable auto format.
