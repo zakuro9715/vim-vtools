@@ -6,6 +6,28 @@ v language tools for vim
 
 - Auto format
 
+## Usage
+
+```
+:w
+```
+
+## Installation
+
+You can install with your favorite plugin manager
+
+[dein.vim](https://github.com/Shougo/dein.vim)
+
+```viml
+dein#add('zakuro9715/vim-vtools')
+```
+
+[vim-plug](https://github.com/junegunn/vim-plug)
+
+```viml
+Plug 'zakuro9715/vim-vtools'
+```
+
 ## Commands
 
 - Fmt: v fmt
