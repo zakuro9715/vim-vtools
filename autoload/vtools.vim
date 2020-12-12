@@ -11,6 +11,10 @@ function! vtools#fmt() abort
   silent call system('rm ' . l:tmpfile)
 endfunction
 
+function! vtools#test() abort
+  execute '!v test %'
+endfunction
+
 function! s:write_to_tmp_v(original)
   let l:timestamp = localtime()
   let l:tmpfile = a:original . l:timestamp . '.v'
