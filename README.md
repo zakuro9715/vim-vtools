@@ -1,6 +1,12 @@
-# vim-vtools
-
-v language tools for vim
+<div align="center">
+    <p>
+        <img width="80" src="https://raw.githubusercontent.com/donnisnoni95/v-logo/master/dist/v-logo.svg?sanitize=true">
+    </p>
+    <h1>V language tools for vim</h1>
+    <p>
+        <a href="https://github.com/vlang/v">v language</a> tools for vim
+    </p>
+</div>
 
 ## Features
 
