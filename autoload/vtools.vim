@@ -1,3 +1,9 @@
+function! vtools#write_pre() abort
+  if get(g:, 'vfmt', 1)
+    call vtools#fmt()
+  endif
+endfunction
+
 function! vtools#fmt() abort
   let l:tmpfile = s:write_to_tmp_v(expand('%'))
   call system('v fmt -w ' . l:tmpfile)
