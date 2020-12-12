@@ -5,6 +5,7 @@ function! s:install()
   augroup END
   command! -buffer -bang -nargs=0 VFmt call vtools#fmt()
   command! -buffer -bang -nargs=0 VTest call vtools#test()
+  command! -buffer -bang -nargs=0 VRun call vtools#run()
 endfunction
 
 augroup vtools_install

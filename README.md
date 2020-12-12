@@ -32,6 +32,7 @@ Plug 'zakuro9715/vim-vtools'
 
 - VFmt: v fmt
 - VTest: v test
+- VRun: v run
 
 ## Configuration
 
