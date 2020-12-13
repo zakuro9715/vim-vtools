@@ -5,7 +5,7 @@ function! vtools#write_pre() abort
 endfunction
 
 function! vtools#fmt() abort
-  let l:tmpfile = s:write_to_tmp_v(expand('%'))
+  let l:tmpfile = s:write_to_tmp(expand('%'), '.v')
   let l:line = line('.')
   let l:col = col('.')
   echo system('v fmt -w ' . l:tmpfile)
@@ -15,20 +15,26 @@ function! vtools#fmt() abort
 endfunction
 
 function! vtools#test() abort
-  execute '!v test %'
+  let l:tmpfile = s:write_to_tmp(expand('%'), '_test.v')
+  echo system('v test ' . l:tmpfile)
+  silent call system('rm ' . l:tmpfile)
 endfunction
 
 function! vtools#run() abort
-  execute '!v run %'
+  let l:tmpfile = s:write_to_tmp(expand('%'), '_test.v')
+  echo system('v run ' . l:tmpfile)
+  silent call system('rm ' . l:tmpfile)
 endfunction
 
 function! vtools#vet() abort
-  execute '!v vet %'
+  let l:tmpfile = s:write_to_tmp(expand('%'), '_test.v')
+  echo system('v vet ' . l:tmpfile)
+  silent call system('rm ' . l:tmpfile)
 endfunction
 
-function! s:write_to_tmp_v(original)
+function! s:write_to_tmp(original, suffix)
   let l:timestamp = localtime()
-  let l:tmpfile = a:original . l:timestamp . '.v'
+  let l:tmpfile = a:original . l:timestamp . a:suffix
   silent execute 'write ' . l:tmpfile
   return l:tmpfile
 endfunction

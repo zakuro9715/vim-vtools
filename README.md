@@ -36,10 +36,10 @@ Plug 'zakuro9715/vim-vtools'
 
 ## Commands
 
-- VFmt: v fmt
-- VTest: v test
-- VRun: v run
-- VVet: v vet
+- VFmt: v fmt buffer
+- VTest: v test buffer
+- VRun: v run buffer
+- VVet: v vet buffer
 
 ## Configuration
 
