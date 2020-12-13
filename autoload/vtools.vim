@@ -8,7 +8,7 @@ function! vtools#fmt() abort
   let l:tmpfile = s:write_to_tmp_v(expand('%'))
   let l:line = line('.')
   let l:col = col('.')
-  call system('v fmt -w ' . l:tmpfile)
+  echo system('v fmt -w ' . l:tmpfile)
   execute '%!cat ' . l:tmpfile
   silent call cursor(l:line, l:col)
   silent call system('rm ' . l:tmpfile)
