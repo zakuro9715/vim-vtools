@@ -21,13 +21,13 @@ function! vtools#test() abort
 endfunction
 
 function! vtools#run() abort
-  let l:tmpfile = s:write_to_tmp(expand('%'), '_test.v')
+  let l:tmpfile = s:write_to_tmp(expand('%'), '.v')
   echo system('v run ' . l:tmpfile)
   silent call system('rm ' . l:tmpfile)
 endfunction
 
 function! vtools#vet() abort
-  let l:tmpfile = s:write_to_tmp(expand('%'), '_test.v')
+  let l:tmpfile = s:write_to_tmp(expand('%'), '.v')
   echo system('v vet ' . l:tmpfile)
   silent call system('rm ' . l:tmpfile)
 endfunction
