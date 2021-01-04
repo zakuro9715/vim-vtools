@@ -27,7 +27,10 @@ Plug 'zakuro9715/vim-vtools'
 ## Commands
 
 - VFmt: v fmt buffer
-- VTest: v test buffer
+- VTest:
+    - if current file is `_test.v`, v test buffer
+    - if `{current_file}_test.v` exists, v test it.
+    - else v test file_dir
 - VRun: v run buffer
 - VVet: v vet buffer
 
