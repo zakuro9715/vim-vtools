@@ -6,7 +6,7 @@ endfunction
 
 function! vtools#fmt() abort
   let l:tmpfile = s:write_to_tmp(expand('%'), '.v')
-  let l:line = line('.'):
+  let l:line = line('.')
   let l:col = col('.')
   echo system('v fmt -w ' . l:tmpfile)
   execute '%!cat ' . l:tmpfile
