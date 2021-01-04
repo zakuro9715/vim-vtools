@@ -7,6 +7,7 @@ function! s:install()
   command! -buffer -bang -nargs=0 VTest call vtools#test()
   command! -buffer -bang -nargs=0 VRun call vtools#run()
   command! -buffer -bang -nargs=0 VVet call vtools#vet()
+  command! -buffer -bang -nargs=1 VImport call vtools#import(<f-args>)
 endfunction
 
 augroup vtools_install

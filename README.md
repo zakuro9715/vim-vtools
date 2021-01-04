@@ -33,6 +33,7 @@ Plug 'zakuro9715/vim-vtools'
     - else v test file_dir
 - VRun: v run buffer
 - VVet: v vet buffer
+- VImport xxx: Insert `import xxx`
 
 ## Configuration
 

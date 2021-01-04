@@ -48,3 +48,27 @@ function! s:write_to_tmp(original, suffix)
   silent execute 'write ' . l:tmpfile
   return l:tmpfile
 endfunction
+
+function! vtools#import(name) abort
+  let l:cursor_pos = getpos('.')
+
+  call cursor(1, 1)
+  let l:line = search('import', 'n')
+  if l:line
+    let l:line = l:line - 1 " before first import
+  endif
+  if !l:line
+    let l:line = search('module', 'n')
+  end
+  if !l:line
+    echoerr 'Cannot detect line to import (module and import not found).'
+    return
+  end
+
+  call setpos('.', cursor_pos)
+  call append(l:line, 'import ' . a:name)
+
+  if get(g:, 'vfmt', 1)
+    call vtools#fmt()
+  endif
+endfunction
