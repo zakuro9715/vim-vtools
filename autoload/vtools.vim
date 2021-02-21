@@ -1,10 +1,10 @@
-function! vtools#write_pre() abort
+function! vtools#write_pre()
   if get(g:, 'vfmt', 1)
     call vtools#fmt()
   endif
 endfunction
 
-function! vtools#fmt() abort
+function! vtools#fmt()
   let l:tmpfile = s:write_to_tmp(expand('%'))
   let l:line = line('.')
   let l:col = col('.')
@@ -14,7 +14,7 @@ function! vtools#fmt() abort
   silent call system('rm ' . l:tmpfile)
 endfunction
 
-function! vtools#test() abort
+function! vtools#test()
   let l:name = expand('%')
   if l:name =~ '_test.v$'
     let l:tmpfile = s:write_to_tmp(l:name, '_test')
@@ -29,13 +29,13 @@ function! vtools#test() abort
   endif
 endfunction
 
-function! vtools#run() abort
+function! vtools#run()
   let l:tmpfile = s:write_to_tmp(expand('%'))
   echo system('v run ' . l:tmpfile)
   silent call system('rm ' . l:tmpfile)
 endfunction
 
-function! vtools#vet() abort
+function! vtools#vet()
   let l:tmpfile = s:write_to_tmp(expand('%'))
   echo system('v vet ' . l:tmpfile)
   silent call system('rm ' . l:tmpfile)
@@ -50,7 +50,7 @@ function! s:write_to_tmp(original, ...)
   return l:tmpfile
 endfunction
 
-function! vtools#import(name) abort
+function! vtools#import(name)
   let l:cursor_pos = getpos('.')
 
   call cursor(1, 1)
