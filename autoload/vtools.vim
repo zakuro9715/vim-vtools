@@ -18,8 +18,7 @@ function! vtools#test()
   let l:name = expand('%')
   if l:name =~ '_test.v$'
     let l:tmpfile = s:write_to_tmp(l:name, '_test')
-    echo system('v test ' . l:tmpfile)
-    silent call system('rm ' . l:tmpfile)
+    echo system('v test ' . l:tmpfile . ' ; rm ' . l:tmpfile)
   else
     let l:test_path = fnamemodify(l:name, ':r') . '_test.v'
     if ! filereadable(l:test_path)
