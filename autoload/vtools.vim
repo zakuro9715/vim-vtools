@@ -5,6 +5,12 @@ function! vtools#write_pre()
 endfunction
 
 function! vtools#fmt()
+  try
+    :LspDocumentFormat
+    return
+  catch
+  endtry
+
   let l:tmpfile = s:write_to_tmp(expand('%'))
   let l:line = line('.')
   let l:col = col('.')
