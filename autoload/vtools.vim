@@ -51,7 +51,11 @@ function! s:write_to_tmp(original, ...)
   let l:dir = fnamemodify(a:original, ':h')
   let l:name = fnamemodify(a:original, ':t')
   let l:tmpfile = l:dir . '/__vtool_tmp__.' . l:timestamp . l:name
+
+  let l:vfmt_save = get(g:, 'vfmt', 1)
+  let g:vfmt = 0
   silent execute 'write ' . l:tmpfile
+  let g:vfmt = l:vfmt_save
   return l:tmpfile
 endfunction
 
