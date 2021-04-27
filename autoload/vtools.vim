@@ -5,11 +5,13 @@ function! vtools#write_pre()
 endfunction
 
 function! vtools#fmt()
-  try
-    :LspDocumentFormatSync
-    return
-  catch
-  endtry
+  if get(g:, 'use_vls', 1)
+    try
+      :LspDocumentFormatSync
+      return
+    catch
+    endtry
+  endif
 
   let l:tmpfile = s:write_to_tmp(expand('%'))
   let l:line = line('.')
