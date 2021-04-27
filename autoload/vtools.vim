@@ -6,7 +6,7 @@ endfunction
 
 function! vtools#fmt()
   try
-    :LspDocumentFormat
+    :LspDocumentFormatSync
     return
   catch
   endtry
