@@ -42,4 +42,7 @@ Plug 'zakuro9715/vim-vtools'
 let g:vfmt = 1
 " disable auto format.
 let g:vfmt = 0
+
+" use vls to format (require vim-lsp and vls)
+let g:use_vls = 1
 ```
