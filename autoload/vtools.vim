@@ -17,7 +17,12 @@ function! vtools#fmt()
   let l:line = line('.')
   let l:col = col('.')
   echo system('v fmt -w ' . l:tmpfile)
-  execute '%!cat ' . l:tmpfile
+  try
+    " This causes E685 on my environment.
+    " Ignore this error because it seems to be working.
+    silent execute '%!cat ' . l:tmpfile
+  catch
+  endtry
   silent call cursor(l:line, l:col)
   silent call system('rm ' . l:tmpfile)
 endfunction
