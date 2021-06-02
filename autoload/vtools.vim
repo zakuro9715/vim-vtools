@@ -5,7 +5,7 @@ function! vtools#write_pre()
 endfunction
 
 function! vtools#fmt()
-  if get(g:, 'vtools_use_vls', 1)
+  if get(g:, 'vtools_use_vls', 0)
     try
       :LspDocumentFormatSync
       return
