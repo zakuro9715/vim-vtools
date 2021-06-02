@@ -44,5 +44,5 @@ let g:vfmt = 1
 let g:vfmt = 0
 
 " use vls to format (require vim-lsp and vls)
-let g:use_vls = 1
+let g:vtools_use_vls = 1
 ```
